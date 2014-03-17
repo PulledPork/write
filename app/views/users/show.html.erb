@@ -5,7 +5,7 @@
 <ol>
 	<% @articles.each do |article| %>
 	    <li>
-	      <div><%= article.title %></div> <div><%= article.text %></div>
+	      <div><%= link_to article.title, article_path %></div>
 	    </li>
 	<% end %>
 </ol>
@@ -17,4 +17,7 @@ if(is_draft)
 else
 	do "published" articles DIV
 end
+
+
+link_to "Profiles", profiles_path
 %>
