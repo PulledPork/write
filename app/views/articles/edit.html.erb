@@ -1,6 +1,7 @@
 <h1>Editing Article</h1>
  
-<%= form_for :Article, url: article_path(@article), method: :patch do |f| %>
+<%# form_for :Article, url: article_path(@article), method: :patch do |f| %>
+<%= form_for(@article) do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title, value:"#{@article.title}" %>
