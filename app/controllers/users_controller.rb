@@ -7,6 +7,16 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	@articles = Article.all
 
+  	@articles.each do |article|
+  		if(is_draft)
+			do "in progress" articles DIV
+		else
+			do "published" articles DIV
+		end
+	end
+	
   	# maybe I can split up @articles_draft and @articles_published here.
+  	#Not sure how to seperate the articles and drafts based on the is_draft db flag T/F
+	
   end
 end
