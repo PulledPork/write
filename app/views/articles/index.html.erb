@@ -3,7 +3,7 @@
 <% @articles.each do |article| %>
 	<div>
 		<span><%= article.title %></span>
-		<empahsis>- by <%= article.user.name %></emphasis>
+		<empahsis>- by <%= article.user %></emphasis>
 		<span><%= link_to "View", article %></span> | 
 		<span><%= link_to "Edit", edit_article_path(article) %></span> | 
 		<span><%= link_to "Delete", article %></span>
