@@ -2,16 +2,19 @@ class ArticlesController < ApplicationController
 	
 	def new
 		@article = Article.new
+		# @user.articles.build is synonomous, but doesn't work in this context
 	end
 
 	def create
-		@article = Article.new(article_params)
+		@user = User.find(params[:id])
+		@article = @user.articles.create(article_params)
 
 		@article.save
 		redirect_to @article
 	end
 
 	def show
+		#@user = User.find(params[:id])
 		@article = Article.find(params[:id])
 	end
 
