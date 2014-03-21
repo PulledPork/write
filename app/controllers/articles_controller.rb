@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
 	
+	# not sure if this is the route to go yet.. needs to NOT include drafts
+	def index_all_users
+		@articles = Article.all
+	end
+
 	# -- IS nested: index, new, create
 	def index
 		@user = User.find(params[:user_id])
@@ -23,10 +28,12 @@ class ArticlesController < ApplicationController
 	# -- NOT nested: show, edit, update, destroy
 	def show
 		@article = Article.find(params[:id])
+		@user = @article.user
 	end
 
 	def edit
 		@article = Article.find(params[:id])
+		@user = @article.user
 	end
 
 	def update
@@ -43,7 +50,7 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 		@article.destroy
 
-		redirect_to user_path(@article.user)
+		redirect_to user_articles_path(@article.user)
 	end
 
 	private
