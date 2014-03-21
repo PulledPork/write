@@ -1,13 +1,13 @@
 <h1><%= @user.name %></h1>
 <emphasis><%= @user.email %></emphasis>
 
-<p><%= link_to "Create New Article", new_article_path %></p>
+<p><%# link_to "Create New Article", new_article_path %></p>
 
 <hr />
 <ol>
 	<% @articles.each do |article| %>
 	    <li>
-	      <div><%= link_to article.title, article_path %></div>
+	      <div><%= link_to article.title, user_article_path(article.user.id, article) %></div>
 	    </li>
 	<% end %>
 </ol>

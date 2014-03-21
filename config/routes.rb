@@ -1,7 +1,17 @@
 Write::Application.routes.draw do
-  resources :users
-  resources :articles
-  
+  resources :users do
+    resources :articles#, shallow: true
+  end
+
+  # SHALLOW: true is equivalent to 
+  #
+  ## resources :users do
+  ##   resources :articles, only: [:index, :new, :create]
+  ## end
+  ## resources :articles, only: [:show, :edit, :update, :destroy]
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

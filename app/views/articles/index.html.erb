@@ -4,8 +4,8 @@
 	<div>
 		<span><%= article.title %></span>
 		<empahsis>- by <%= article.user.name %></emphasis>
-		<span><%= link_to "View", article %></span> | 
-		<span><%= link_to "Edit", edit_article_path(article) %></span> | 
-		<span><%= link_to "Delete", article %></span>
+		<span><%= link_to "View", user_article_path(article.user.id, article) %></span> | 
+		<span><%= link_to "Edit", edit_user_article_path(article.user.id, article) %></span> | 
+		<span><%= link_to "Delete", "" %></span>
 	</div>
 <% end %>
