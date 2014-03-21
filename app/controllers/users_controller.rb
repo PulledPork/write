@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-  	@articles = @user.articles
+  	@published_articles = @user.articles.published
+    @drafts = @user.articles.drafts
 
 #	  @articles.each do |article|
 #  		if(is_draft)

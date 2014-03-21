@@ -1,2 +1,7 @@
 <h1><%= @article.title %></h1>
 <div><%= @article.text %></div>
+<br />
+<%= link_to "Edit", edit_article_path(@article) %> |
+<%= link_to "Publish", publish_article_path(@article.id) %>
+
+<%= debug(@article) %>

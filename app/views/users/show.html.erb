@@ -5,14 +5,41 @@
 <p><%= link_to "Create New Article", new_user_article_path(@user) %></p>
 
 <hr />
-<ol>
-	<% @articles.each do |article| %>
-	    <li>
-	      <div><%= link_to article.title, article_path(article) %></div>
-	    </li>
-	<% end %>
-</ol>
+<div class="container-fluid">
+	<div class="row">	
+		<div class="col-sm-6">
+			<h3>Published</h3>
+			<ol>
+				<% @published_articles.each do |article| %>
+				    <li>
+				      <div>
+				      	
+				      	<%= link_to article.title, article_path(article) %>
+				      	<%= render 'layouts/articleControls', article_id: article.id %>
 
+				      </div> 
+				    </li>
+				<% end %>
+			</ol>
+		</div>
+
+		<div class="col-sm-6">
+			<h3>Not Published</h3>
+			<ol>
+				<% @drafts.each do |article| %>
+				    <li>
+				      <div>
+				      	
+				      	<%= link_to article.title, article_path(article) %>
+				      	<%= render 'layouts/articleControls', article_id: article.id %>
+
+				      </div> 
+				    </li>
+				<% end %>
+			</ol>
+		</div>
+	</div><!-- .row -->
+</div> <!-- .container-fluid -->
 <%#
 link_to "Profiles", profiles_path
 %>

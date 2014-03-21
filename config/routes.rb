@@ -1,8 +1,16 @@
 Write::Application.routes.draw do
+
+  resources :articles, only: :index
+  
   resources :users do
-    resources :articles, shallow: true
+    resources :articles, shallow: true, except: :index do
+      member do
+        post 'publish'
+      end
+    end
   end
 
+  # http://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Resources.html
   # SHALLOW: true is equivalent to 
   #
   ## resources :users do
@@ -10,7 +18,7 @@ Write::Application.routes.draw do
   ## end
   ## resources :articles, only: [:show, :edit, :update, :destroy]
 
-
+  #patch 'articles/:id' => 'articles#publish'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

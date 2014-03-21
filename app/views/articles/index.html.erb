@@ -4,8 +4,8 @@
 	<div>
 		<span><%= article.title %></span>
 		<empahsis>- by <%= article.user.name %></emphasis>
-		<span><%= link_to "View", article %></span> | 
-		<span><%= link_to "Edit", edit_article_path(article) %></span> | 
-		<span><%= link_to "Delete", article, method: :delete, data: {confirm: "are you sure you want to delete?"} %></span>
+		
+		<%= render 'layouts/articleControls', article_id: article.id %>
+
 	</div>
 <% end %>

@@ -1,15 +1,16 @@
 class ArticlesController < ApplicationController
 	
 	# not sure if this is the route to go yet.. needs to NOT include drafts
-	def index_all_users
-		@articles = Article.all
+	def index
+		@articles = Article.published
+		#this is defined in the Model (all published posts)
 	end
 
-	# -- IS nested: index, new, create
-	def index
-		@user = User.find(params[:user_id])
-		@articles = @user.articles
-	end
+	# -- IS nested: new, create
+	#def index
+	#	@user = User.find(params[:user_id])
+	#	@articles = @user.articles
+	#end
 
 	def new
 		@user = User.find(params[:user_id])
@@ -50,7 +51,14 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 		@article.destroy
 
-		redirect_to user_articles_path(@article.user)
+		redirect_to user_path(@article.user)
+	end
+
+	def publish
+		@article = Article.find(params[:id])
+		@article.update_attribute(:is_draft, false)
+
+		redirect_to article_path(@article)
 	end
 
 	private

@@ -1,0 +1,5 @@
+<%# article_id is being passed in to the partial... %>
+~
+<span><%= link_to "View", article_path(article_id) %></span> | 
+<span><%= link_to "Edit", edit_article_path(article_id) %></span> | 
+<span><%= link_to "Delete", article_path(article_id), method: :delete, data: {confirm: "are you sure you want to delete?"} %></span>	
