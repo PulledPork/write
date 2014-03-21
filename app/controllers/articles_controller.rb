@@ -1,9 +1,15 @@
 class ArticlesController < ApplicationController
 	
-	def new
-		#@article = Article.new
+	# -- IS nested: index, new, create
+	def index
 		@user = User.find(params[:user_id])
-		@user.articles.build #is synonomous, but doesn't work in this context
+		@articles = @user.articles
+	end
+
+	def new
+		@user = User.find(params[:user_id])
+		#@user.articles.build  #--this line breaks the code for some reason...
+		@article = Article.new
 	end
 
 	def create
@@ -14,8 +20,8 @@ class ArticlesController < ApplicationController
 		redirect_to @article
 	end
 
+	# -- NOT nested: show, edit, update, destroy
 	def show
-		#@user = User.find(params[:user_id])
 		@article = Article.find(params[:id])
 	end
 
@@ -33,8 +39,11 @@ class ArticlesController < ApplicationController
 		end
 	end
 
-	def index
-		@articles = Article.all
+	def destroy
+		@article = Article.find(params[:id])
+		@article.destroy
+
+		redirect_to user_path(@article.user)
 	end
 
 	private

@@ -1,6 +1,6 @@
 Write::Application.routes.draw do
   resources :users do
-    resources :articles#, shallow: true
+    resources :articles, shallow: true
   end
 
   # SHALLOW: true is equivalent to 
