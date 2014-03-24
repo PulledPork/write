@@ -2,16 +2,17 @@ Write::Application.routes.draw do
 
   resources :articles, only: :index
   
-  #match 'articles/:id/publish', to: 'articles#publish', via: [:get, :post] 
-  #post 'articles/:id/publish' => 'articles#publish'
   
 
   resources :users do
     resources :articles, shallow: true, except: :index do
       member do
-        get 'publish'  
+        patch 'publish'  
         # This only works for get? at least the url that's generated
         # passes params via GET -- url is "publish_article_path(@article.id)"
+        #
+        # match 'articles/:id/publish', to: 'articles#publish', via: [:get, :post] 
+        # post 'articles/:id/publish' => 'articles#publish'
       end
     end
   end
