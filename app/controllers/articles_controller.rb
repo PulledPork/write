@@ -9,8 +9,9 @@ class ArticlesController < ApplicationController
 	# -- IS nested: new, create
 	def new
 		@user = User.find(params[:user_id])
-		#@user.articles.build  #--this line breaks the code for some reason...
 		@article = Article.new
+		#@user.articles.build  #--this line breaks the code for some reason...
+		#@article = @user.articles.create()
 	end
 
 	def create

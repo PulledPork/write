@@ -6,7 +6,8 @@
 	<%= f.text_area :text, value:"Write your article here!" %>
 
 	<p>
-		<%= f.submit value:"Save Article for later" %>
+		<%= f.submit value:"Save Article for later" %> or 
+		<%= link_to "Publish", publish_article_path(@article), method: :patch %>
 	</p>
 <% end %>
 

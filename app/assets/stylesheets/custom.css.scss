@@ -52,6 +52,11 @@ body {
   border-top-right-radius: 0;
 }
 
+/* New Article Page*/
+form#new_article textarea#article_text{
+  width: 90%;
+  height: 300px;
+}
 
 /* miscellaneous */
 
