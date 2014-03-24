@@ -2,16 +2,11 @@ class ArticlesController < ApplicationController
 	
 	# not sure if this is the route to go yet.. needs to NOT include drafts
 	def index
-		@articles = Article.published
+		@articles = Article.published?
 		#this is defined in the Model (all published posts)
 	end
 
 	# -- IS nested: new, create
-	#def index
-	#	@user = User.find(params[:user_id])
-	#	@articles = @user.articles
-	#end
-
 	def new
 		@user = User.find(params[:user_id])
 		#@user.articles.build  #--this line breaks the code for some reason...
