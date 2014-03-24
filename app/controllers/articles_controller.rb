@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
 
 	def publish
 		@article = Article.find(params[:id])
-		@article.update_attribute(:is_draft, false)
+		@article.publish
 
 		redirect_to article_path(@article)
 	end

@@ -2,17 +2,12 @@ Write::Application.routes.draw do
 
   resources :articles, only: :index
   
-  
-
   resources :users do
     resources :articles, shallow: true, except: :index do
       member do
         patch 'publish'  
-        # This only works for get? at least the url that's generated
-        # passes params via GET -- url is "publish_article_path(@article.id)"
+        # have to add method: :patch to link_to(...)
         #
-        # match 'articles/:id/publish', to: 'articles#publish', via: [:get, :post] 
-        # post 'articles/:id/publish' => 'articles#publish'
       end
     end
   end
@@ -24,6 +19,8 @@ Write::Application.routes.draw do
   ##   resources :articles, only: [:index, :new, :create]
   ## end
   ## resources :articles, only: [:show, :edit, :update, :destroy]
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
