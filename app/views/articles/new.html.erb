@@ -7,7 +7,7 @@
 
 	<p>
 		<%= f.submit value:"Save Article for later" %> or 
-		<%= link_to "Publish", publish_article_path(@article), method: :patch %>
+		<%# link_to "Publish", publish_article_path(@article), method: :patch %>
 		<%# I think in this case publish might actually have to point
 			to some other method in the DB, bc it has to save the form first,
 			then publish it. Has to call CREATE, and then after, PUBLISH
