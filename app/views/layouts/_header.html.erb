@@ -5,6 +5,7 @@
     <li><%= link_to "All articles", articles_path %></li>
     <li><%= link_to "Josh Weaver", user_path(1) %></li>
     <li><%= link_to "Aaron Augello", user_path(2) %></li>
+    <li>not a link</li>
     
     <% unless params[:controller] == "articles" && params[:action] == "index" #don't show on Articles#index %> 
     	<li>
