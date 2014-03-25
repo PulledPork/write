@@ -7,4 +7,5 @@ class Article < ActiveRecord::Base
 	def publish
 		self.update_attribute(:is_published, true)
 	end
+	
 end
