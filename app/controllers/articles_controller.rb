@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
 	
-	# not sure if this is the route to go yet.. needs to NOT include drafts
+	# -- Seperately defined resource
 	def index
-		@articles = Article.published?
+		@articles = Article.published
 		#this is defined in the Model (all published posts)
 	end
 
@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
 
 	def publish
 		@article = Article.find(params[:id])
-		@article.publish
+		@article.publish  # custom method defined in Model
 
 		redirect_to article_path(@article)
 	end
