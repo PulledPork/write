@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	
-	# not sure if this is the route to go yet.. needs to NOT include drafts
+	# -- Seperately defined resource
 	def index
 		@articles = Article.published
 		#this is defined in the Model (all published posts)
