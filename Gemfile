@@ -5,7 +5,7 @@ ruby '1.9.3'
 
 gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '3.1.1'
-gem 'bcrypt-ruby', '3.1.2'
+gem 'bcrypt-ruby', '3.1.2'	# necessary to use has_secure_password
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

@@ -20,6 +20,7 @@ module Write
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)    # for Bootstrap
+    I18n.enforce_available_locales = true   # for creating Users in IRB? http://ruby.railstutorial.org/book/ruby-on-rails-tutorial#code-password_implementation
   end
 end

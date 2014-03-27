@@ -5,15 +5,15 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <%= render 'layouts/ie_conditional' %>
+  <%= render 'shared/ie_conditional' %>
 </head>
 <body>
 
-<%= render 'layouts/header' %>
+<%= render 'shared/header' %>
 
 <%= yield %>
 
-<%= render 'layouts/footer' %>
+<%= render 'shared/footer' %>
 
 <% if Rails.env.development? %>
 	<%= debug(params) %>

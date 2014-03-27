@@ -1,5 +1,7 @@
 Write::Application.routes.draw do
 
+  root 'articles#index'
+
   resources :articles, only: :index
   
   resources :users do
