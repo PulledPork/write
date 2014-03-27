@@ -8,5 +8,6 @@ To dos:
 * split out @articles_ip and @articles_published in Users controller?
 	* Work on User "profile" page
 * Build out the signup/sign in elements and authentication system
+* When pushing to production, setup SSL: http://ruby.railstutorial.org/book/ruby-on-rails-tutorial#sec-deploying_to_production_with_ssl
 * ~~setup relationships btwn user <> articles~~
 	* ~~make sure I can retreive the USER who authored a given ARTICLE~~

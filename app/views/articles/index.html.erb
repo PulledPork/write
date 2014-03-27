@@ -5,7 +5,7 @@
 		<span><%= article.title %></span>
 		<empahsis>- by <%= article.user.name %></emphasis>
 		
-		<%= render 'layouts/articleControls', article_id: article.id %>
+		<%= render 'shared/articleControls', article_id: article.id %>
 
 	</div>
 <% end %>
