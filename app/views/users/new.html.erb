@@ -1,28 +1,30 @@
-<h1>Sign up</h1>
+<div class="container">
+<%= form_for @user, html: { class: "form form-signup", role: "form" } do |f| %>
+<%# http://api.rubyonrails.org/classes/ActionView/Helpers/FormHelper.html %>
 
-<div class="row">
-  <div class="span6 offset3">
+<%# 
+    List of all available Methods (see instance methods right side):
+    http://apidock.com/rails/ActionView/Helpers/FormHelper
+  %>
+
+    <h2 class="form-signup-heading">Sign Up</h2>
     
-    <%= form_for(@user) do |f| %>
+    <%= f.text_field :name, class: "form-control first", placeholder: "Full Name", required: true, autofocus: true %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+    <%= f.email_field :email, class: "form-control no_rounded_corners", placeholder: "Email address", required: true %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+    <%= f.password_field :password, class: "form-control no_rounded_corners", placeholder: "Password", required: true %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation, class: "form-control last", placeholder: "Confirm Password", required: true %>
+    
+    <label class="checkbox">
+      <input type="checkbox" value="remember-me" disabled="true"> Remember me
+    </label>
+    <%= f.submit "Create my account", class: "btn btn-lg btn-primary btn-block" %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+<% end %>
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-    <% end %>
-
-  </div>
-</div>
-
+</div> <!-- /container -->
 
 <%#  
 for more form info, see:

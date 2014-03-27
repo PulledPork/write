@@ -6,7 +6,9 @@
     <li><%= link_to "Josh Weaver", user_path(1) %></li>
     <li><%= link_to "Aaron Augello", user_path(2) %></li>
     
-    <% unless params[:controller] == "articles" && params[:action] == "index" #don't show on Articles#index %> 
+    <% unless (params[:controller] == "articles" && params[:action] == "index") || (params[:controller] == "users" && params[:action] == "new")
+      #don't show on Articles#index OR Users#New
+      %> 
     	<li>
     		<%= link_to "New Article", new_user_article_path(@user) %>
     	</li>
