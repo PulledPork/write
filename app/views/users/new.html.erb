@@ -7,12 +7,14 @@
     http://apidock.com/rails/ActionView/Helpers/FormHelper
   %>
 
+  <%= render "shared/error_messages" %>
+    
     <h2 class="form-signup-heading">Sign Up</h2>
     
     <%= f.text_field :name, class: "form-control first", placeholder: "Full Name", required: true, autofocus: true %>
 
     <%= f.email_field :email, class: "form-control no_rounded_corners", placeholder: "Email address", required: true %>
-
+    
     <%= f.password_field :password, class: "form-control no_rounded_corners", placeholder: "Password", required: true %>
 
     <%= f.password_field :password_confirmation, class: "form-control last", placeholder: "Confirm Password", required: true %>

@@ -8,7 +8,7 @@
     <li><%= link_to "Aaron Augello", user_path(2) %></li>
     <li><%= link_to "Sign up", new_user_path %></li>
     
-    <% unless (params[:action] == "index") || (params[:controller] == "users" && params[:action] == "new")
+    <% unless (params[:action] == "index") || (params[:action] == "create") ||(params[:controller] == "users" && params[:action] == "new")
       #don't show on Articles#index/Users#index OR Users#New
       %> 
       <li>

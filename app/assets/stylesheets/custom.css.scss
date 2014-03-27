@@ -56,6 +56,21 @@ body {
   margin: 0 auto;
 }
 
+/* FORMS - errors */
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  input.form-control {
+    margin-bottom: 0; /* To make sure the whole red highlight shows up on the form*/
+  }
+}
 
 
 /* New Article Page*/

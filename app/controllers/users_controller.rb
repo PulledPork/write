@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    if @user.save do
+    if @user.save
       redirect_to @user # if saved successfully, display user page
     else
       render 'new' # if not successful, render errrors
