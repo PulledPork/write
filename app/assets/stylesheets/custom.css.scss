@@ -8,14 +8,13 @@
 }
 $backgroundColor: #eee;
 
-/* GENERAL */
-/*
+/* STRUCTURE */
 body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: $backgroundColor;
 }
-*/
+
 
 /* FORMS */
 .form .form-signin-heading,
@@ -73,13 +72,13 @@ body {
 }
 
 
-/* New Article Page*/
+/* Write New Page*/
 form#new_article textarea#article_text{
   width: 90%;
   height: 300px;
 }
 
-/* miscellaneous */
+/* Miscellaneous */
 
 .debug_dump {
   clear: both;
