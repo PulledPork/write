@@ -2,11 +2,12 @@
 <nav>
 
   <ul>
-    <li><%= link_to "All articles", articles_path %></li>
-    <li><%= link_to "All users", users_path %></li>
     <li><%= link_to "Josh Weaver", user_path(1) %></li>
     <li><%= link_to "Aaron Augello", user_path(2) %></li>
-    <li><%= link_to "Sign up", new_user_path %></li>
+    <li><%= link_to "Hansen Martin", user_path(3) %></li>
+    <li><%= link_to "All Articles", articles_path %></li>
+    <li><%= link_to "All Users", users_path %></li>
+    <li><%= link_to "Sign Up", new_user_path %></li>
     
     <% unless (params[:action] == "index") || (params[:action] == "create") ||(params[:controller] == "users" && params[:action] == "new")
       #don't show on Articles#index/Users#index OR Users#New
