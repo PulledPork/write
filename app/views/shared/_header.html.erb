@@ -5,8 +5,11 @@
     <li><%= link_to "Users", users_path %></li>
     <li><%= link_to "Articles", articles_path %></li>
     
-    <% unless (params[:action] == "index") || (params[:action] == "create") ||(params[:controller] == "users" && params[:action] == "new")
-      #don't show on Articles#index/Users#index OR Users#New
+    <% unless (params[:action] == "index") || 
+      (params[:action] == "create") ||
+      (params[:controller] == "users" && params[:action] == "new") ||
+      (params[:controller] == "sessions")
+      #don't show on Articles#index/Users#index OR Users#New OR Sessions
       %> 
     <li>
         <%= link_to "Write New", new_user_article_path(@user) %>
