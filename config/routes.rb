@@ -14,6 +14,12 @@ Write::Application.routes.draw do
     end
   end
 
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/signup', to: 'users#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+
   # http://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Resources.html
   # SHALLOW: true is equivalent to 
   #

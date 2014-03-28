@@ -22,13 +22,6 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	@published_articles = @user.articles.published
     @drafts = @user.articles.drafts
-
-#	  @articles.each do |article|
-#  		if(is_draft)
-#			do "in progress" articles DIV
-#		else
-#			do "published" articles DIV
-#		end
 	end
 	
 	private
