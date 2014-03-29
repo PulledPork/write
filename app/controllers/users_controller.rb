@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
+      sign_in(@user)
       flash[:success] = "You have successfully registered"
       redirect_to @user # if saved successfully, display user page
     else
