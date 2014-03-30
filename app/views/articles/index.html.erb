@@ -1,11 +1,21 @@
-<h1>Home Page</h1>
+<h1>Home</h1>
+
+<nav>
+    <b>USERS<b>
+  <ul>
+    <li><%= link_to "Josh W", user_path(1) %></li>
+    <li><%= link_to "Aaron A", user_path(2) %></li>
+    <li><%= link_to "Hansen M", user_path(3) %></li>
+  </ul>
+</nav>
+
+    <b>PUBLISHED<b>
 
 <% @articles.each do |article| %>
 	<div>
 		<span><%= article.title %></span>
-		<empahsis>- by <%= article.user.name %></emphasis>
+		<emphasis>- by <%= article.user.name %></emphasis>
 		
 		<%= render 'shared/articleControls', article_id: article.id %>
-
 	</div>
 <% end %>

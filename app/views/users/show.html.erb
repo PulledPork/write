@@ -2,7 +2,7 @@
 <h1><%= @user.name %></h1>
 <emphasis><%= @user.email %></emphasis>
 
-<p><%= link_to "Create New Article", new_user_article_path(@user) %></p>
+<p><%= link_to "Create New", new_user_article_path(@user) %></p>
 
 <hr />
 <div class="container-fluid">
@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="col-sm-6">
-			<h3>Not Published</h3>
+			<h3>Drafts</h3>
 			<ol>
 				<% @drafts.each do |article| %>
 				    <li>
