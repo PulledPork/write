@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
 	# -- Validate/authenticate PASSWORD
 	has_secure_password 	# presence validation for password and confirmation auto added here
-	validates :password, length: { minimum: 6 }  # validate password length
+	validates :password, length: { minimum: 4 }  # validate password length
 
 	# -- Validate EMAIL
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
